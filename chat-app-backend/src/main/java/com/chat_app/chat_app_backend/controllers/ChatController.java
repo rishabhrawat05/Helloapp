@@ -3,6 +3,7 @@ package com.chat_app.chat_app_backend.controllers;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,7 +13,7 @@ import com.chat_app.chat_app_backend.payload.MessageRequest;
 import com.chat_app.chat_app_backend.services.ChatService;
 
 @Controller
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin("http://localhost:5173")
 public class ChatController {
 
 	private ChatService chatService;
@@ -23,10 +24,10 @@ public class ChatController {
 	
 	@MessageMapping("/sendMessage/{roomId}")
 	@SendTo("/topic/room/{roomId}")
-	public ResponseEntity<Message> sendMessage(
+	public Message sendMessage(
 			@DestinationVariable String roomId,
-			@RequestBody MessageRequest request) {
+			@Payload MessageRequest request) {
 		
-		return ResponseEntity.ok(chatService.sendMessage(roomId, request));
+		return chatService.sendMessage(roomId, request);
 	}
 }

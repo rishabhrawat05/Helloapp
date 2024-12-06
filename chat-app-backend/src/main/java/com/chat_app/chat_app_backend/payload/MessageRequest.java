@@ -13,6 +13,7 @@ public class MessageRequest {
 	
 	private String roomId;
 	
+	
 
 	public String getContent() {
 		return content;
@@ -37,6 +38,10 @@ public class MessageRequest {
 	public void setRoomId(String roomId) {
 		this.roomId = roomId;
 	}
+
+	
+	
+	
 	
 	
 }

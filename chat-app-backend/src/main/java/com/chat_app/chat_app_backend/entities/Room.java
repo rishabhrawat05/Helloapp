@@ -17,6 +17,8 @@ public class Room {
 	
 	private String roomId;
 	
+	private String name;
+	
 	private List<Message> messages=new ArrayList<Message>();
 
 	public String getId() {
@@ -42,6 +44,16 @@ public class Room {
 	public void setMessages(List<Message> messages) {
 		this.messages = messages;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
 	
 	
 }

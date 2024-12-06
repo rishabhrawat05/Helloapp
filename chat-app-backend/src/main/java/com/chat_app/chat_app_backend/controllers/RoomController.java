@@ -14,11 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.chat_app.chat_app_backend.entities.Message;
 import com.chat_app.chat_app_backend.entities.Room;
+import com.chat_app.chat_app_backend.payload.RoomRequest;
 import com.chat_app.chat_app_backend.services.RoomService;
 
 @RestController
 @RequestMapping("/api/v1/room")
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin("http://localhost:5173")
 public class RoomController {
 
 	private RoomService roomService;
@@ -28,8 +29,8 @@ public class RoomController {
 	}
 	
 	@PostMapping("/create-room")
-	public ResponseEntity<Room> createRoom(@RequestBody String roomId) {
-		return ResponseEntity.ok(roomService.createRoom(roomId));
+	public ResponseEntity<Room> createRoom(@RequestBody RoomRequest request) {
+		return ResponseEntity.ok(roomService.createRoom(request));
 	}
 	
 	@GetMapping("/join-room/{roomId}")

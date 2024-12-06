@@ -1,11 +1,8 @@
 package com.chat_app.chat_app_backend.entities;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
 
 
 public class Message {
@@ -14,7 +11,7 @@ public class Message {
 	
 	private String content;
 	
-	private LocalDate timeStamp;
+	private LocalDateTime timeStamp;
 
 	
 	public String getSender() {
@@ -33,13 +30,13 @@ public class Message {
 		this.content = content;
 	}
 
-	public LocalDate getTimeStamp() {
+	public LocalDateTime getTimeStamp() {
 		return timeStamp;
 	}
 
 
 
-	public void setTimeStamp(LocalDate timeStamp) {
+	public void setTimeStamp(LocalDateTime timeStamp) {
 		this.timeStamp = timeStamp;
 	}
 
@@ -47,7 +44,7 @@ public class Message {
 	public Message(String sender, String content) {
 		this.sender = sender;
 		this.content = content;
-		this.timeStamp=LocalDate.now();
+		this.timeStamp=LocalDateTime.now();
 	}
 	
 	
