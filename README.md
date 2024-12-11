@@ -36,7 +36,7 @@ HelloApp is a real-time chat application built using Spring Boot, WebSocket, Rea
 
 ### Frontend Setup
 
-1. Navigate to the `chat-app-frontend` directory.
+1. Navigate to the `HelloApp` directory.
 2. Install dependencies:
    ```bash
    npm install
@@ -59,6 +59,3 @@ HelloApp is a real-time chat application built using Spring Boot, WebSocket, Rea
 4. Push to the branch (`git push origin feature-branch`).
 5. Create a new Pull Request.
 
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
